@@ -1,3 +1,6 @@
+import ngMaterial from 'angular-material';
+import 'angular-material/angular-material.css';
+
 var angular = require('angular');
 
 var techsModule = require('./app/techs/index');
@@ -9,12 +12,15 @@ var header = require('./app/header');
 var title = require('./app/title');
 var footer = require('./app/footer');
 
-require('./index.less');
-
+require('./index.less')
 angular
-  .module('app', [techsModule, 'ui.router'])
+  .module('app', [ngMaterial, techsModule, 'ui.router'])
   .config(routesConfig)
   .component('app', main)
   .component('fountainHeader', header)
   .component('fountainTitle', title)
   .component('fountainFooter', footer);
+
+//
+// angular
+//   .module('app', [techsModule, 'ui.router'])
