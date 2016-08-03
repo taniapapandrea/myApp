@@ -3,23 +3,20 @@ import 'angular-material/angular-material.css';
 
 var angular = require('angular');
 
-var techsModule = require('./app/techs/index');
 require('angular-ui-router');
 var routesConfig = require('./routes');
-
-var main = require('./app/main');
-var header = require('./app/header');
-var title = require('./app/title');
-var footer = require('./app/footer');
+//
+// var main = require('./app/main/main.html');
+// var header = require('./app/header/header.html');
+// var footer = require('./app/footer/footer.html');
 
 require('./index.less')
 angular
-  .module('app', [ngMaterial, techsModule, 'ui.router'])
-  .config(routesConfig)
-  .component('app', main)
-  .component('fountainHeader', header)
-  .component('fountainTitle', title)
-  .component('fountainFooter', footer);
+  .module('app', [ngMaterial, 'ui.router'])
+  .config(routesConfig);
+  // .component('app', main)
+  // .component('header', header)
+  // .component('footer', footer);
 
 //
 // angular
